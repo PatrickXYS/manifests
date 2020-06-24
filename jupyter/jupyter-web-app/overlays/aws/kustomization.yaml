@@ -1,9 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
+bases:
 - ../../base
 configMapGenerator:
 - name: jupyter-web-app-config
-  behavior: replace
+  behavior: merge
   files:
   - spawner_ui_config.yaml
