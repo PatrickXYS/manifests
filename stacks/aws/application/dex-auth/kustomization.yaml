@@ -2,7 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: auth
 resources:
-- ../../../../dex-auth/dex-crds/base
 - ../../../../dex-auth/dex-crds/overlays/istio
 configMapGenerator:
 - name: dex-parameters
@@ -10,3 +9,4 @@ configMapGenerator:
   literals:
   - issuer="http://dex.auth.svc.cluster.local:5556/dex"
   - oidc_redirect_uris=["/login/oidc"]
+  - client_id="kubeflow-oidc-authservice"

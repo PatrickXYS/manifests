@@ -7,11 +7,6 @@ spec:
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: application/application-crds
-      name: application-crds
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
           path: application/v3
       name: application
     # Install istio in a different namespace: istio-system
@@ -19,17 +14,12 @@ spec:
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: istio-1-3-1/istio-crds-1-3-1
-      name: istio-crds
+          path: stacks/aws/application/istio-1-3-1-stack
+      name: istio-stack
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: istio-1-3-1/istio-install
-      name: istio-install
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: istio-1-3-1/cluster-local-gateway-1-3-1
+          path: stacks/aws/application/cluster-local-gateway-1-3-1
       name: cluster-local-gateway
     - kustomizeConfig:
         repoRef:
@@ -39,12 +29,12 @@ spec:
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: cert-manager/cert-manager-crds
+          path: stacks/aws/application/cert-manager-crds
       name: cert-manager-crds
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: cert-manager/cert-manager-kube-system-resources
+          path: stacks/aws/application/cert-manager-kube-system-resources
       name: cert-manager-kube-system-resources
     - kustomizeConfig:
         repoRef:
@@ -65,7 +55,7 @@ spec:
         repoRef:
           name: manifests
           path: stacks/aws/application/dex-auth
-      name: dex
+      name: dex-auth
     - kustomizeConfig:
         repoRef:
           name: manifests
@@ -74,7 +64,7 @@ spec:
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: spark/spark-operator
+          path: spark/spark-operator/overlays/application
       name: spark-operator
     - kustomizeConfig:
         repoRef:
@@ -84,70 +74,25 @@ spec:
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: knative/knative-serving-crds/overlays/application
-      name: knative-crds
+          path: knative/installs/generic
+      name: knative
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: knative/knative-serving-install/overlays/application
-      name: knative-install
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: kfserving/kfserving-crds/overlays/application
-      name: kfserving-crds
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: kfserving/kfserving-install/overlays/application
-      name: kfserving-install
+          path: kfserving/installs/generic
+      name: kfserving
     # Spartakus is a separate applications so that kfctl can remove it
     # to disable usage reporting
     - kustomizeConfig:
         repoRef:
           name: manifests
-          path: common/spartakus/overlays/application
+          path: stacks/aws/application/spartakus
       name: spartakus
     - kustomizeConfig:
         repoRef:
           name: manifests
           path: tensorboard/overlays/istio
       name: tensorboard
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/api-service/overlays/application
-      name: api-service
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/persistent-agent/overlays/application
-      name: persistent-agent
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/pipelines-runner/overlays/application
-      name: pipelines-runner
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: stacks/aws/application/pipelines-ui
-      name: pipelines-ui
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/pipelines-viewer/overlays/application
-      name: pipelines-viewer
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/scheduledworkflow/overlays/application
-      name: scheduledworkflow
-    - kustomizeConfig:
-        repoRef:
-          name: manifests
-          path: pipeline/pipeline-visualization-service/overlays/application
-      name: pipeline-visualization-service
     - kustomizeConfig:
         repoRef:
           name: manifests
