@@ -37,14 +37,14 @@ resources:
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
-- name: pipeline-minio-config
-  behavior: merge
-  literals:
-  - minioPvcName=minio-pv-claim
-- name: pipeline-mysql-config
-  behavior: merge
-  literals:
-  - mysqlPvcName=mysql-pv-claim
+#- name: pipeline-minio-config
+#  behavior: merge
+#  literals:
+#  - minioPvcName=minio-pv-claim
+#- name: pipeline-mysql-config
+#  behavior: merge
+#  literals:
+#  - mysqlPvcName=mysql-pv-claim
 - envs:
   - ./config/params.env
   name: kubeflow-config
