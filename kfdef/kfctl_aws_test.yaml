@@ -55,7 +55,7 @@ spec:
         repoRef:
           name: manifests
           path: stacks/aws/application/dex-auth
-      name: dex-auth
+      name: dex
     - kustomizeConfig:
         repoRef:
           name: manifests
@@ -98,6 +98,11 @@ spec:
           name: manifests
           path: stacks/aws
       name: kubeflow-apps
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: aws/istio-ingress/base_v3
+      name: istio-ingress
   plugins:
     - kind: KfAwsPlugin
       metadata:
