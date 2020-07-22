@@ -20,14 +20,14 @@ vars:
     name: dex-config
     apiVersion: v1
   fieldref:
-    fieldpath: data.config_static_email
+    fieldpath: data.static_email
 - name: config_static_password_hash
   objref:
     kind: ConfigMap
     name: dex-config
     apiVersion: v1
   fieldref:
-    fieldpath: data.config_static_password_hash
+    fieldpath: data.static_password_hash
 patchesStrategicMerge:
 - configmap_patch.yaml
 generatorOptions:
