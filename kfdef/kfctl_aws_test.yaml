@@ -9,8 +9,6 @@ spec:
           name: manifests
           path: application/v3
       name: application
-    # Install istio in a different namespace: istio-system
-    # Remove this application if istio is already installed
     - kustomizeConfig:
         repoRef:
           name: manifests
