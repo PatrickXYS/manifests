@@ -34,7 +34,7 @@ spec:
     - description: About
       url: https://github.com/jetstack/cert-manager
     type: ""
-    version: v0.10.0
+    version: v0.15.0
   selector:
     matchLabels:
       app.kubernetes.io/component: cert-manager
