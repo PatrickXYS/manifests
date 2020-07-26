@@ -15,5 +15,5 @@ metadata:
   labels:
     app.kubernetes.io/component: oidc-authservice
     app.kubernetes.io/name: oidc-authservice
-  name: oidc-authservice-parameters
+  name: oidc-authservice-config
   namespace: istio-system
