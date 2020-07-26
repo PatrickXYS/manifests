@@ -2,14 +2,16 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   labels:
-    app: security
+    app: istio-install
+    kustomize.component: istio-install
   name: istio-security-post-install-release-1.3-latest-daily
   namespace: istio-system
 spec:
   template:
     metadata:
       labels:
-        app: security
+        app: istio-install
+        kustomize.component: istio-install
       name: istio-security-post-install
     spec:
       affinity:

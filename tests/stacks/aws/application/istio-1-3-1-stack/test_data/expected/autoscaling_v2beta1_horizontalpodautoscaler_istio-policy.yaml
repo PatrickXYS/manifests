@@ -2,7 +2,8 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: mixer
+    app: istio-install
+    kustomize.component: istio-install
   name: istio-policy
   namespace: istio-system
 spec:

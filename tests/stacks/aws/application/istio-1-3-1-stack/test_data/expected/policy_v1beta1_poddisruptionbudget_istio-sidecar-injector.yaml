@@ -2,13 +2,15 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    app: sidecarInjectorWebhook
+    app: istio-install
     istio: sidecar-injector
+    kustomize.component: istio-install
   name: istio-sidecar-injector
   namespace: istio-system
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sidecarInjectorWebhook
+      app: istio-install
       istio: sidecar-injector
+      kustomize.component: istio-install

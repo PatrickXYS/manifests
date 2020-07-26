@@ -2,13 +2,15 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    app: pilot
+    app: istio-install
     istio: pilot
+    kustomize.component: istio-install
   name: istio-pilot
   namespace: istio-system
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: pilot
+      app: istio-install
       istio: pilot
+      kustomize.component: istio-install

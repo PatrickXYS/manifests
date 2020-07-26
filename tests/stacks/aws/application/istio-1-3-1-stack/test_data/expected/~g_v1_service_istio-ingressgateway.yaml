@@ -4,8 +4,9 @@ metadata:
   annotations:
     beta.cloud.google.com/backend-config: '{"ports": {"http2":"iap-backendconfig"}}'
   labels:
-    app: istio-ingressgateway
+    app: istio-install
     istio: ingressgateway
+    kustomize.component: istio-install
   name: istio-ingressgateway
   namespace: istio-system
 spec:
@@ -39,6 +40,7 @@ spec:
     port: 15443
     targetPort: 15443
   selector:
-    app: istio-ingressgateway
+    app: istio-install
     istio: ingressgateway
+    kustomize.component: istio-install
   type: NodePort

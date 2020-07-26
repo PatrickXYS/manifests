@@ -2,9 +2,10 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    app: telemetry
+    app: istio-install
     istio: mixer
     istio-mixer-type: telemetry
+    kustomize.component: istio-install
     version: 1.1.0
   name: istio-telemetry
   namespace: istio-system
@@ -12,6 +13,7 @@ spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: telemetry
+      app: istio-install
       istio: mixer
       istio-mixer-type: telemetry
+      kustomize.component: istio-install

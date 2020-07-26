@@ -272,5 +272,8 @@ data:
         target_label: pod_name
 kind: ConfigMap
 metadata:
+  labels:
+    app: istio-install
+    kustomize.component: istio-install
   name: prometheus
   namespace: istio-system

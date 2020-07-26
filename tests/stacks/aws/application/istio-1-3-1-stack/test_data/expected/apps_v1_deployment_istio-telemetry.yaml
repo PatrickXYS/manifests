@@ -2,15 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: istio-mixer
+    app: istio-install
     istio: mixer
+    kustomize.component: istio-install
   name: istio-telemetry
   namespace: istio-system
 spec:
   selector:
     matchLabels:
+      app: istio-install
       istio: mixer
       istio-mixer-type: telemetry
+      kustomize.component: istio-install
   strategy:
     rollingUpdate:
       maxSurge: 100%
@@ -20,9 +23,10 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: telemetry
+        app: istio-install
         istio: mixer
         istio-mixer-type: telemetry
+        kustomize.component: istio-install
     spec:
       affinity:
         nodeAffinity:

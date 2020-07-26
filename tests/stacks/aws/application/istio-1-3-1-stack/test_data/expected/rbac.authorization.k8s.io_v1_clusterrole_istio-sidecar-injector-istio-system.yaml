@@ -2,8 +2,9 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
-    app: sidecarInjectorWebhook
+    app: istio-install
     istio: sidecar-injector
+    kustomize.component: istio-install
   name: istio-sidecar-injector-istio-system
 rules:
 - apiGroups:

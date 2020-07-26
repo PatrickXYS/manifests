@@ -2,21 +2,25 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   labels:
-    app: nodeagent
+    app: istio-install
     istio: nodeagent
+    kustomize.component: istio-install
   name: istio-nodeagent
   namespace: istio-system
 spec:
   selector:
     matchLabels:
+      app: istio-install
       istio: nodeagent
+      kustomize.component: istio-install
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: nodeagent
+        app: istio-install
         istio: nodeagent
+        kustomize.component: istio-install
     spec:
       affinity:
         nodeAffinity:

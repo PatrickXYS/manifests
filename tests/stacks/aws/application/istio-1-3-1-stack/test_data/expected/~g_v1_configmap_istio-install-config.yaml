@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  namespace: istio-system
+kind: ConfigMap
+metadata:
+  labels:
+    app: istio-install
+    kustomize.component: istio-install
+  name: istio-install-config
+  namespace: istio-system

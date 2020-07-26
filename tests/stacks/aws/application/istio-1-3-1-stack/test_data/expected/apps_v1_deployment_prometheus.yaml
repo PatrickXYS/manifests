@@ -2,20 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: prometheus
+    app: istio-install
+    kustomize.component: istio-install
   name: prometheus
   namespace: istio-system
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prometheus
+      app: istio-install
+      kustomize.component: istio-install
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: prometheus
+        app: istio-install
+        kustomize.component: istio-install
     spec:
       affinity:
         nodeAffinity:

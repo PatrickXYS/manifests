@@ -132,6 +132,7 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    app: istio
+    app: istio-install
+    kustomize.component: istio-install
   name: istio
   namespace: istio-system

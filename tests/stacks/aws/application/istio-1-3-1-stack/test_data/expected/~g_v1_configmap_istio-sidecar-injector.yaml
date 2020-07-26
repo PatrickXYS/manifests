@@ -399,7 +399,8 @@ data:
 kind: ConfigMap
 metadata:
   labels:
-    app: istio
+    app: istio-install
     istio: sidecar-injector
+    kustomize.component: istio-install
   name: istio-sidecar-injector
   namespace: istio-system
