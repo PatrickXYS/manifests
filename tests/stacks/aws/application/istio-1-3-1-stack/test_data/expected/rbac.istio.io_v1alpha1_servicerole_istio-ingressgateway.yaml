@@ -1,6 +1,9 @@
 apiVersion: rbac.istio.io/v1alpha1
 kind: ServiceRole
 metadata:
+  labels:
+    app: istio-install
+    kustomize.component: istio-install
   name: istio-ingressgateway
   namespace: istio-system
 spec:

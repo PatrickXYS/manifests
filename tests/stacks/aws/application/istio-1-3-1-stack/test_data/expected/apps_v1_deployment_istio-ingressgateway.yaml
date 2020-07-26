@@ -2,15 +2,17 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: istio-ingressgateway
+    app: istio-install
     istio: ingressgateway
+    kustomize.component: istio-install
   name: istio-ingressgateway
   namespace: istio-system
 spec:
   selector:
     matchLabels:
-      app: istio-ingressgateway
+      app: istio-install
       istio: ingressgateway
+      kustomize.component: istio-install
   strategy:
     rollingUpdate:
       maxSurge: 100%
@@ -20,8 +22,9 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: istio-ingressgateway
+        app: istio-install
         istio: ingressgateway
+        kustomize.component: istio-install
     spec:
       affinity:
         nodeAffinity:

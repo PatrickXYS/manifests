@@ -4,14 +4,17 @@ metadata:
   annotations:
     checksum/config-volume: f8da08b6b8c170dde721efd680270b2901e750d4aa186ebb6c22bef5b78a43f9
   labels:
-    app: pilot
+    app: istio-install
     istio: pilot
+    kustomize.component: istio-install
   name: istio-pilot
   namespace: istio-system
 spec:
   selector:
     matchLabels:
+      app: istio-install
       istio: pilot
+      kustomize.component: istio-install
   strategy:
     rollingUpdate:
       maxSurge: 100%
@@ -21,8 +24,9 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: pilot
+        app: istio-install
         istio: pilot
+        kustomize.component: istio-install
     spec:
       affinity:
         nodeAffinity:

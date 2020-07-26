@@ -45,5 +45,8 @@ data:
     kubectl apply -f ${pathToResourceYAML}
 kind: ConfigMap
 metadata:
+  labels:
+    app: istio-install
+    kustomize.component: istio-install
   name: istio-security-custom-resources
   namespace: istio-system

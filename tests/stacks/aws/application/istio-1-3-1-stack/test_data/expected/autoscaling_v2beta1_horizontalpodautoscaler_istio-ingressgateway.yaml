@@ -2,8 +2,9 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: istio-ingressgateway
+    app: istio-install
     istio: ingressgateway
+    kustomize.component: istio-install
   name: istio-ingressgateway
   namespace: istio-system
 spec:
