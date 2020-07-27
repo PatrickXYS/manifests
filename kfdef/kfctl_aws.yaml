@@ -42,11 +42,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metacontroller/base
-    name: metacontroller
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: stacks/aws/application/oidc-authservice
     name: oidc-authservice
   - kustomizeConfig:
@@ -62,11 +57,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: spark/spark-operator/overlays/application
-    name: spark-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: stacks/aws
     name: kubeflow-apps
   - kustomizeConfig:
@@ -77,11 +67,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metadata/v3
-    name: metadata
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: knative/installs/generic
     name: knative
   - kustomizeConfig:
@@ -89,11 +74,6 @@ spec:
         name: manifests
         path: kfserving/installs/generic
     name: kfserving
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: stacks/aws/application/spartakus
-    name: spartakus
   - kustomizeConfig:
       repoRef:
         name: manifests

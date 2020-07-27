@@ -4,6 +4,9 @@ namespace: kubeflow
 resources:
   # List the Kubeflow applications that should be included
   # TODO(https://github.com/kubeflow/manifests/issues/1073):
+  # Misc
+  - ../../metacontroller/base
+  - ../../spark/spark-operator/overlays/application
   # control plane
   - ../../admission-webhook/webhook/v3
   - ../../common/centraldashboard/overlays/stacks
@@ -33,6 +36,9 @@ resources:
   - ../../aws/nvidia-device-plugin/overlays/application
   # Kubernetes resources - anonymous user
   - ../../default-install/base
+  # Misc
+  - ../../metadata/v3
+  - ./application/spartakus
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:

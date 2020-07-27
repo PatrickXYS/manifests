@@ -42,23 +42,8 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metacontroller/base
-    name: metacontroller
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: admission-webhook/bootstrap/overlays/application
     name: bootstrap
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: spark/spark-operator/overlays/application
-    name: spark-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: metadata/v3
-    name: metadata
   - kustomizeConfig:
       repoRef:
         name: manifests
@@ -72,16 +57,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/aws/application/spartakus
-    name: spartakus
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tensorboard/overlays/istio
-    name: tensorboard
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: stacks/aws
     name: kubeflow-apps
   - kustomizeConfig:
@@ -89,6 +64,11 @@ spec:
         name: manifests
         path: stacks/aws/application/istio-ingress-cognito
     name: istio-ingress
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: tensorboard/overlays/istio
+    name: tensorboard
   - kustomizeConfig:
       repoRef:
         name: manifests
