@@ -7,6 +7,11 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
+        path: namespaces/base
+    name: kf-namespace
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
         path: application/v3
     name: application
   - kustomizeConfig:
@@ -42,11 +47,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metacontroller/base
-    name: metacontroller
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: stacks/aws/application/oidc-authservice
     name: oidc-authservice
   - kustomizeConfig:
@@ -62,11 +62,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: spark/spark-operator/overlays/application
-    name: spark-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: stacks/aws
     name: kubeflow-apps
   - kustomizeConfig:
@@ -74,11 +69,6 @@ spec:
         name: manifests
         path: aws/istio-ingress/base_v3
     name: istio-ingress
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: metadata/v3
-    name: metadata
   - kustomizeConfig:
       repoRef:
         name: manifests
@@ -92,12 +82,7 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/aws/application/spartakus
-    name: spartakus
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tensorboard/overlays/istio
+        path: stacks/application/tensorboard
     name: tensorboard
   plugins:
   - kind: KfAwsPlugin
