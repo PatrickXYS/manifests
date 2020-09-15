@@ -6,7 +6,7 @@ python_paths:
   - kubeflow/testing/py
   - kubeflow/kfctl/py
 workflows:
-  - app_dir: kubeflow/manifests/tests/workflows
+  - app_dir: PatrickXYS/manifests/tests/workflows
     component: workflows
     name: unit
     job_types:
