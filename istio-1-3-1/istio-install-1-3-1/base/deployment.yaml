@@ -659,8 +659,8 @@ spec:
         - --log_output_level=default:info
         - --configStoreURL=mcps://istio-galley.$(namespace).svc:9901
         - --configDefaultNamespace=$(namespace)
-        - --useAdapterCRDs=false
-        - --useTemplateCRDs=false
+        - --useAdapterCRDs=true
+        - --useTemplateCRDs=true
         - --trace_zipkin_url=http://zipkin.$(namespace):9411/api/v1/spans
         env:
         - name: GODEBUG
@@ -958,7 +958,8 @@ spec:
         - --keyFile=/etc/certs/key.pem
         - --caCertFile=/etc/certs/root-cert.pem
         - --configDefaultNamespace=$(namespace)
-        - --useAdapterCRDs=false
+        - --useAdapterCRDs=true
+        - --useTemplateCRDs=true
         - --trace_zipkin_url=http://zipkin.$(namespace):9411/api/v1/spans
         - --averageLatencyThreshold
         - 100ms
